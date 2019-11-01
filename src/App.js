@@ -35,7 +35,7 @@ function UserList(props) {
 
 ReactDOM.render (
   <UserList users = {users} />,
-  document.querySelector('.App')
+  document.getElementById('root')
 );
 
 export default App;

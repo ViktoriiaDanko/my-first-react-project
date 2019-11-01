@@ -24,7 +24,7 @@ function App() {
 
 function UserList(props) {
   const listItems = users.map((user) =>
-   <li key = {user.toString()}>
+   <li key = {user.id}>
      {user}
    </li>
   );

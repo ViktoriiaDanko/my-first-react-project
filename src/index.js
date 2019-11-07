@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import users from './api/users';
 
 ReactDOM.render(
-    <App />, 
+    <App users = {users} />, 
     document.getElementById('root')
    );

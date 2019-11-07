@@ -4,10 +4,10 @@ import './App.css';
 import todos from './api/todos';
 import users from './api/users';
 
-function App() {
-  const listItems = users.map((props) =>
-   <li key = {props.id}>
-     {props.name}
+function App(props) {
+  const listItems = props.users.map((user) =>
+   <li key = {user.id}>
+     {user.name}
    </li>
   );
 

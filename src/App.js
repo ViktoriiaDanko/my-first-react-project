@@ -1,11 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 
 import todos from './api/todos';
 import users from './api/users';
 
 function App() {
+  const listItems = users.map((props) =>
+   <li key = {props.id}>
+     {props.name}
+   </li>
+  );
+
   return (
     <div className="App">
     <h1>Static list of todos</h1>
@@ -18,24 +23,11 @@ function App() {
         <span>Users: </span>
         {users.length}
       </p>
+    <div className="listItems">
+      <ul>{listItems}</ul>
+    </div>
     </div>
   );
 }
-
-function UserList(props) {
-  const listItems = users.map((user) =>
-   <li key = {user.id}>
-     {user}
-   </li>
-  );
-  return (
-    <ul>{listItems}</ul>
-  );
-}
-
-ReactDOM.render (
-  <UserList users = {users} />,
-  document.getElementById('root')
-);
 
 export default App;

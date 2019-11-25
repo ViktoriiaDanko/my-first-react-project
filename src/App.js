@@ -5,25 +5,30 @@ import todos from './api/todos';
 import users from './api/users';
 import PropTypes from 'prop-types';
 
+
 function App(props) {
   const listItems = props.todos.map((todo) => {
     const user = props.users.find(user => user.id === todo.userId);
-    const completed =  todo.completed ? 'Completed' : 'Not completed';
+    const status =  todo.completed ? 'Completed' : 'Not completed';
 
-  return (
-    <tr>
-      <td key={user.id}>
-        {user.name}
-      </td>
-      <td key={todo.Id}>
-        {todo.title} 
-      </td>
-      <td key={todo.Id}>{completed}</td>
-    </tr>
-  )
-  });
+return (
+  <table>
+    <thead>
+      <tr>
+        <th>User name</th>
+        <th>Title</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {listItems.map(todo => <App name={user.name} title={todo.title} status={status} />)}  
+    </tbody>
+  </table>
     
-  return (
+  )
+ });
+    
+ return (
     <div className="App">
     <h1>Static list of todos</h1>
       <p>
@@ -41,6 +46,7 @@ function App(props) {
     </div>
   );
 };
+  
 
 App.propTypes = {
   todos: PropTypes.arrayOf(

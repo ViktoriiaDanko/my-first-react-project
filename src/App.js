@@ -39,7 +39,7 @@ function App(props) {
         {users.length}
       </p>
     <div className="listItems">
-    <table>
+    <table className="items">
         <thead>
           <tr>
             <th>User name</th>

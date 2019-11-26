@@ -3,5 +3,23 @@
 }
 
 .listItems {
+  width: 800px;
+  margin: auto;
   text-align: left;
+}
+
+.items {
+  border-collapse: collapse;
+}
+
+.listItems td, th {
+ padding: 5px;
+ border: 2px solid black;
+}
+
+.listItems th {
+  text-align: center;
+  background-color:lightgray;
+  padding: 15px;
+  font-size: 18px;
 }

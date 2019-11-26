@@ -56,7 +56,6 @@ function App(props) {
   );
 };
   
-
 App.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({

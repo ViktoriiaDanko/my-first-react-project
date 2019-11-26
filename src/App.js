@@ -11,20 +11,18 @@ function App(props) {
     const user = props.users.find(user => user.id === todo.userId);
     const status =  todo.completed ? 'Completed' : 'Not completed';
 
-return (
-  <table>
-    <thead>
-      <tr>
-        <th>User name</th>
-        <th>Title</th>
-        <th>Status</th>
+    return (
+      <tr key={user.id}>
+        <td>
+          {user.name}
+        </td>
+        <td>
+          {todo.title} 
+        </td>
+        <td>
+          {status}
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      {listItems.map(todo => <App name={user.name} title={todo.title} status={status} />)}  
-    </tbody>
-  </table>
-    
   )
  });
     
@@ -41,7 +39,18 @@ return (
         {users.length}
       </p>
     <div className="listItems">
-      <ul>{listItems}</ul>
+    <table>
+        <thead>
+          <tr>
+            <th>User name</th>
+            <th>Title</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {listItems}
+        </tbody>
+      </table>
     </div>
     </div>
   );
